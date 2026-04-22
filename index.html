@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Password Generator 🔐</h1>
+
+    <!-- LIVELLO DI DIFFICOLTÀ -->
+    <div class="difficulty-section">
+      <label for="difficulty">Livello di difficoltà</label>
+      <select id="difficulty" onchange="applyDifficulty()">
+        <option value="easy">🟢 Facile - Account temporanei (8+ caratteri)</option>
+        <option value="medium" selected>🟡 Medio - Social e servizi (12+ caratteri)</option>
+        <option value="hard">🔴 Difficile - Banking e dati sensibili (16+ caratteri)</option>
+      </select>
+      <div class="difficulty-desc" id="difficultyDesc">
+        Adatta per social e servizi generici
+      </div>
+    </div>
+
+    <div class="output-box">
+      <input type="text" id="password" placeholder="Clicca su genera..." readonly>
+      <button id="copyBtn">📋</button>
+    </div>
+
+    <div class="slider-box">
+      <label>Lunghezza: <span id="lengthValue">12</span></label>
+      <input type="range" id="length" min="6" max="32" value="12">
+    </div>
+
+    <div class="settings">
+      <label><input type="checkbox" id="uppercase" checked> Maiuscole</label>
+      <label><input type="checkbox" id="lowercase" checked> Minuscole</label>
+      <label><input type="checkbox" id="numbers" checked> Numeri</label>
+      <label><input type="checkbox" id="symbols"> Simboli</label>
+    </div>
+
+    <div class="strength">
+      <div id="strengthBar"></div>
+    </div>
+
+    <button id="generateBtn">Genera Password</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
